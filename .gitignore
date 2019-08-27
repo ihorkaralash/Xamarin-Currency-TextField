@@ -5,3 +5,4 @@ src/Plugin.TextField.iOS/bin/
 src/Plugin.TextField.iOS/obj/
 src/CurrencyTextField.Sample.iOS/CurrencyTextField.Sample.iOS.csproj.user
 src/Plugin.TextField.iOS/Plugin.TextField.iOS.csproj.user
+nuget/nuget.exe
