@@ -1,0 +1,7 @@
+src/.vs/
+src/CurrencyTextField.Sample.iOS/bin/
+src/CurrencyTextField.Sample.iOS/obj/
+src/Plugin.TextField.iOS/bin/
+src/Plugin.TextField.iOS/obj/
+src/CurrencyTextField.Sample.iOS/CurrencyTextField.Sample.iOS.csproj.user
+src/Plugin.TextField.iOS/Plugin.TextField.iOS.csproj.user
