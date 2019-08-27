@@ -1,1 +1,1 @@
-# Xamarin-Currency-TextField
+# Currency TextField for Xamarin.iOS
