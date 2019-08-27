@@ -2,7 +2,7 @@
 
 Format text field inputs as currency in your Xamarin.iOS applications.
 
-![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/ios.png)
+![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/ios1.png)
 
 ## NuGet
 * Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/IconFonts.svg?label=NuGet)](https://www.nuget.org/packages/IconFonts/)
