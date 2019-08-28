@@ -6,7 +6,7 @@ Format text field inputs as currency in your Xamarin.iOS applications.
 
 ## NuGet
 
-* Available on NuGet: [![Nuget](https://img.shields.io/nuget/v/CurrencyTextField)](https://www.nuget.org/packages/CurrencyTextField/)
+* Available on NuGet: [![Nuget](https://img.shields.io/nuget/v/CurrencyTextField?label=NuGet)](https://www.nuget.org/packages/CurrencyTextField/)
 
 ## Controls
 
