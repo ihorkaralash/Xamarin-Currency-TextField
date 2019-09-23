@@ -8,7 +8,7 @@
     <owners>Ihor Karalash</owners>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/ihorkaralash/Xamarin-Currency-TextField</projectUrl>
-    <iconUrl>https://picua.org/images/2019/08/27/c82797bf7deeb6bdb57c2fa42db5141b.png</iconUrl>
+    <iconUrl>https://picua.org/images/2019/09/23/5f9d4ae4fb66385c7d87d53ff39752f2.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Format text field inputs as currency in your Xamarin.Android and Xamarin.iOS applications.</description>
     <releaseNotes>See: https://github.com/ihorkaralash/Xamarin-Currency-TextField/blob/master/CHANGELOG.md</releaseNotes>
