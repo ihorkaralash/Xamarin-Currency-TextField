@@ -1,5 +1,7 @@
 ﻿namespace Plugin.TextField
 {
+    public delegate bool FormatDelegate(string text, out string newText);
+
     public interface ICurrencyTextField
     {
         int MaxLength { get; set; }
@@ -13,5 +15,7 @@
         string DecimalSeparator { set; }
 
         string GroupingSeparator { set; }
+
+        FormatDelegate Format { get; set; }
     }
 }

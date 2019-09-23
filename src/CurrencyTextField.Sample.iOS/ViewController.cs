@@ -1,4 +1,5 @@
 ﻿using System;
+using Pex.Mobile.iOS.UI.Views;
 using UIKit;
 
 namespace CurrencyTextField.Sample.iOS
@@ -14,6 +15,12 @@ namespace CurrencyTextField.Sample.iOS
             base.ViewDidLoad ();
 
             TextField.MaxLength = 10;
+            TextField.Format = (string text, out string newText) =>
+            {
+                newText = "";
+
+                return text == "$0.0";
+            };
         }
 
         public override void ViewDidAppear(bool animated)

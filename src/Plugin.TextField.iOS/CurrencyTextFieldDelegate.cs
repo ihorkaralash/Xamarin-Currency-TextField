@@ -1,31 +1,16 @@
-﻿using System;
-using CoreGraphics;
-using Foundation;
+﻿using Foundation;
+using Plugin.TextField;
+using Plugin.TextField.iOS;
 using UIKit;
 
-namespace Plugin.TextField.iOS
+namespace Pex.Mobile.iOS.UI.Views
 {
-    [Register("CurrencyTextField")]
-    public class CurrencyTextField : UITextField, ICurrencyTextField
+    public class CurrencyTextFieldDelegate : NSObject, IUITextFieldDelegate, ICurrencyTextFieldDelegate
     {
+        private readonly UITextField _textField;
         private string _previousValue = "";
 
         protected readonly NSNumberFormatter CurrencyFormatter = new NSNumberFormatter();
-
-        public CurrencyTextField(CGRect frame) : base(frame)
-        {
-            InitTextField();
-        }
-
-        public CurrencyTextField(NSCoder coder) : base(coder)
-        {
-            InitTextField();
-        }
-
-        public CurrencyTextField(IntPtr handle) : base(handle)
-        {
-            InitTextField();
-        }
 
         public int MaxLength { get; set; }
 
@@ -37,7 +22,7 @@ namespace Plugin.TextField.iOS
 
         public int IntegerValue
         {
-            get => (int) Amount;
+            get => (int)Amount;
             set => Amount = value;
         }
 
@@ -56,23 +41,15 @@ namespace Plugin.TextField.iOS
             set => CurrencyFormatter.CurrencyGroupingSeparator = value;
         }
 
-        public override void WillMoveToSuperview(UIView newsuper)
-        {
-            if (newsuper != null)
-            {
-                NSNotificationCenter.DefaultCenter.AddObserver(TextFieldTextDidChangeNotification, TextDidChange);
-            }
-            else
-            {
-                NSNotificationCenter.DefaultCenter.RemoveObserver(this);
-            }
-        }
+        public FormatDelegate Format { get; set; }
 
-        private void InitTextField()
+        public CurrencyTextFieldDelegate(UITextField textField)
         {
+            _textField = textField;
+
             MaxLength = 12;
 
-            KeyboardType = UIKeyboardType.DecimalPad;
+            _textField.KeyboardType = UIKeyboardType.DecimalPad;
 
             CurrencyFormatter.NumberStyle = NSNumberFormatterStyle.Currency;
             CurrencyFormatter.MinimumFractionDigits = 2;
@@ -83,7 +60,7 @@ namespace Plugin.TextField.iOS
         {
             get
             {
-                var cleanNumericString = GetCleanNumberString();
+                var cleanNumericString = GetCleanNumberString(_textField.Text);
                 if (double.TryParse(cleanNumericString, out var textFieldNumber))
                 {
                     return textFieldNumber / 100;
@@ -93,7 +70,7 @@ namespace Plugin.TextField.iOS
             }
             set
             {
-                var textFieldStringValue = Text = CurrencyFormatter.StringFromNumber(new NSNumber(value));
+                var textFieldStringValue = _textField.Text = CurrencyFormatter.StringFromNumber(new NSNumber(value));
                 if (!string.IsNullOrEmpty(textFieldStringValue))
                 {
                     _previousValue = textFieldStringValue;
@@ -101,26 +78,23 @@ namespace Plugin.TextField.iOS
             }
         }
 
-        public FormatDelegate Format { get; set; }
-
         private int GetOriginalCursorPosition()
         {
             var cursorOffset = 0;
-            var startPosition = BeginningOfDocument;
-            var selectedTextRange = SelectedTextRange;
+            var startPosition = _textField.BeginningOfDocument;
+            var selectedTextRange = _textField.SelectedTextRange;
 
             if (selectedTextRange != null)
             {
-                cursorOffset = (int) GetOffsetFromPosition(startPosition, selectedTextRange.Start);
+                cursorOffset = (int)_textField.GetOffsetFromPosition(startPosition, selectedTextRange.Start);
             }
 
             return cursorOffset;
         }
 
-        private string GetCleanNumberString()
+        private string GetCleanNumberString(string textFieldString)
         {
             var cleanNumericString = "";
-            var textFieldString = Text;
 
             if (!string.IsNullOrEmpty(textFieldString))
             {
@@ -139,37 +113,41 @@ namespace Plugin.TextField.iOS
 
         private void SetCursorOriginalPosition(int cursorOffset, int? oldTextFieldLength)
         {
-            var newLength = Text?.Length;
-            var startPosition = BeginningOfDocument;
+            var newLength = _textField.Text?.Length;
+            var startPosition = _textField.BeginningOfDocument;
 
             if (oldTextFieldLength.HasValue && newLength.HasValue && oldTextFieldLength > cursorOffset)
             {
                 var newOffset = newLength - oldTextFieldLength + cursorOffset;
-                var newCursorPosition = GetPosition(startPosition, newOffset.Value);
+                var newCursorPosition = _textField.GetPosition(startPosition, newOffset.Value);
 
                 if (newCursorPosition != null)
                 {
-                    var newSelectedRange = GetTextRange(newCursorPosition, newCursorPosition);
-                    SelectedTextRange = newSelectedRange;
+                    var newSelectedRange = _textField.GetTextRange(newCursorPosition, newCursorPosition);
+                    _textField.SelectedTextRange = newSelectedRange;
                 }
             }
         }
 
-        private void TextDidChange(NSNotification notification)
+        [Export("textField:shouldChangeCharactersInRange:replacementString:")]
+        public bool ShouldChangeCharacters(UITextField textField, NSRange range, string replacementString)
         {
-            var cursorOffset = GetOriginalCursorPosition();
-            var cleanNumericString = GetCleanNumberString();
-            var textFieldLength = Text?.Length;
+            var text = string.IsNullOrEmpty(replacementString) ?
+                 _textField.Text.Remove((int)range.Location, (int)range.Length) : _textField.Text.Insert((int)range.Location, replacementString);
 
-            if (Format != null && Format(Text, out string newString))
+            if (Format != null && Format(text, out string newString))
             {
-                _previousValue = Text = newString;
-                return;
+                _previousValue = _textField.Text = newString;
+                return false;
             }
+
+            var cursorOffset = GetOriginalCursorPosition() + (string.IsNullOrEmpty(replacementString) ? -replacementString.Length : replacementString.Length);
+            var cleanNumericString = GetCleanNumberString(text);
+            var textFieldLength = text.Length;
 
             if (cleanNumericString.Length > MaxLength)
             {
-                Text = _previousValue;
+                _textField.Text = _previousValue;
             }
             else
             {
@@ -179,11 +157,13 @@ namespace Plugin.TextField.iOS
                 }
                 else
                 {
-                    Text = _previousValue;
+                    _textField.Text = _previousValue;
                 }
             }
 
             SetCursorOriginalPosition(cursorOffset, textFieldLength);
+
+            return false;
         }
     }
 }
