@@ -3,18 +3,21 @@
   <metadata>
     <id>CurrencyTextField</id>
     <version>1.0.9</version>
-    <title>Currency TextField for Xamarin.iOS</title>
+    <title>Currency TextField for Xamarin.Android and Xamarin.iOS</title>
     <authors>Ihor Karalash</authors>
     <owners>Ihor Karalash</owners>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/ihorkaralash/Xamarin-Currency-TextField</projectUrl>
     <iconUrl>https://picua.org/images/2019/08/27/c82797bf7deeb6bdb57c2fa42db5141b.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Format text field inputs as currency in your Xamarin.iOS applications.</description>
+    <description>Format text field inputs as currency in your Xamarin.Android and Xamarin.iOS applications.</description>
     <releaseNotes>See: https://github.com/ihorkaralash/Xamarin-Currency-TextField/blob/master/CHANGELOG.md</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>xamarin, currency, textfield, uitextfield, plugin for xamarin, plugins, xamarin.ios, ios</tags>
+    <tags>xamarin, currency, textfield, uitextfield, plugin for xamarin, plugins, xamarin.android, xamarin.ios, android, ios</tags>
 	<dependencies>
+	     <group targetFramework="MonoAndroid10">
+			<dependency id="Xamarin.Android.Support.Compat" version="24.2.1" />
+         </group>
          <group targetFramework="Xamarin.iOS10">
          </group>
        </dependencies>
@@ -22,5 +25,8 @@
   <files>
 	<!-- iOS reference assemblies -->
 	<file src="..\src\Plugin.TextField.iOS\bin\Release\Plugin.TextField.iOS.dll" target="lib\Xamarin.iOS10" />
+	
+	<!-- Android reference assemblies -->
+	<file src="..\src\Plugin.TextField.Droid\bin\Release\Plugin.TextField.Droid.dll" target="lib\MonoAndroid10" />
   </files>
 </package>

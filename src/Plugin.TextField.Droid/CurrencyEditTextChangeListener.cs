@@ -3,7 +3,7 @@ using Android.Text;
 using Java.Lang;
 using Object = Java.Lang.Object;
 
-namespace Plugin.TextField.Android
+namespace Plugin.TextField.Droid
 {
     public class CurrencyEditTextChangeListener : Object, ITextWatcher
     {

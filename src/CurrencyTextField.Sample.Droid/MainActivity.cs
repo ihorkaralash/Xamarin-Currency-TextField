@@ -3,21 +3,18 @@ using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
-using Plugin.TextField.Android;
+using Plugin.TextField.Droid;
 
-namespace CurrencyTextField.Sample.Android
+namespace CurrencyTextField.Sample.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
-            global::Android.Support.V7.Widget.Toolbar toolbar = FindViewById<global::Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
 
             FindViewById<CurrencyEditText>(Resource.Id.valueEditText).Format = (string text, out string newText) =>
             {
@@ -49,4 +46,3 @@ namespace CurrencyTextField.Sample.Android
         }
     }
 }
-

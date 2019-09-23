@@ -7,9 +7,9 @@ using Android.Util;
 using Java.Lang;
 using Java.Text;
 
-namespace Plugin.TextField.Android
+namespace Plugin.TextField.Droid
 {
-    [Register("Plugin.TextField.Android.CurrencyEditText")]
+    [Register("Plugin.TextField.Droid.CurrencyEditText")]
     public class CurrencyEditText : AppCompatEditText, ICurrencyTextField
     {
         private string _previousValue = "";

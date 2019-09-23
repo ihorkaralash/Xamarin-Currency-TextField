@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Plugin.TextField.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Plugin.TextField.Droid.Resource", IsApplication=false)]
 
-namespace Plugin.TextField.Android
+namespace Plugin.TextField.Droid
 {
 	
 	

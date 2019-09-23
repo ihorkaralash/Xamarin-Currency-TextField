@@ -12,3 +12,8 @@ src/Plugin.TextField.Android/bin/
 src/Plugin.TextField.Android/obj/
 src/CurrencyTextField.Sample.Android/CurrencyTextField.Sample.Android.csproj.user
 src/Plugin.TextField.Android/Plugin.TextField.Android.csproj.user
+src/CurrencyTextField.Sample.Droid/bin/
+src/CurrencyTextField.Sample.Droid/obj/
+src/Plugin.TextField.Droid/bin/
+src/Plugin.TextField.Droid/obj/
+src/CurrencyTextField.Sample.Droid/CurrencyTextField.Sample.Droid.csproj.user
