@@ -2,7 +2,7 @@
 
 Format text field inputs as currency in your Xamarin.Android and Xamarin.iOS applications.
 
-![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/ios.png)
+![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/android.png)![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/ios.png)
 
 ## NuGet
 
@@ -10,9 +10,19 @@ Format text field inputs as currency in your Xamarin.Android and Xamarin.iOS app
 
 ## Controls
 
+* CurrencyEditText
 * CurrencyTextField
 
-## Using
+## Using Android
+
+```xml
+<Plugin.TextField.Droid.CurrencyEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="$0.00" />
+```
+
+## Using iOS
 
 Inherit from CurrencyTextField
 
