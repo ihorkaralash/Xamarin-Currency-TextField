@@ -1,6 +1,7 @@
 ### 1.0.23
 * Added android implementation of a currency text field
 * Added format callback to have ability override the default formatting
+* Added currency textfield delegate for ios
 
 ### 1.0.9
 * Format text field inputs as currency
