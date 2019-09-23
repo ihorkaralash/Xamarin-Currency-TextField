@@ -1,5 +1,4 @@
 ﻿using System;
-using Pex.Mobile.iOS.UI.Views;
 using UIKit;
 
 namespace CurrencyTextField.Sample.iOS

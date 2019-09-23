@@ -1,9 +1,7 @@
 ﻿using Foundation;
-using Plugin.TextField;
-using Plugin.TextField.iOS;
 using UIKit;
 
-namespace Pex.Mobile.iOS.UI.Views
+namespace Plugin.TextField.iOS
 {
     public class CurrencyTextFieldDelegate : NSObject, IUITextFieldDelegate, ICurrencyTextFieldDelegate
     {
