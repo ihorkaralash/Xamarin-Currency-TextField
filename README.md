@@ -1,6 +1,6 @@
-# Currency TextField for Xamarin.iOS
+# Currency TextField for Xamarin.Android and Xamarin.iOS
 
-Format text field inputs as currency in your Xamarin.iOS applications.
+Format text field inputs as currency in your Xamarin.Android and Xamarin.iOS applications.
 
 ![alt text](https://raw.githubusercontent.com/ihorkaralash/Xamarin-Currency-TextField/master/art/ios.png)
 
