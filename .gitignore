@@ -6,3 +6,9 @@ src/Plugin.TextField.iOS/obj/
 src/CurrencyTextField.Sample.iOS/CurrencyTextField.Sample.iOS.csproj.user
 src/Plugin.TextField.iOS/Plugin.TextField.iOS.csproj.user
 nuget/nuget.exe
+src/CurrencyTextField.Sample.Android/bin/
+src/CurrencyTextField.Sample.Android/obj/
+src/Plugin.TextField.Android/bin/
+src/Plugin.TextField.Android/obj/
+src/CurrencyTextField.Sample.Android/CurrencyTextField.Sample.Android.csproj.user
+src/Plugin.TextField.Android/Plugin.TextField.Android.csproj.user

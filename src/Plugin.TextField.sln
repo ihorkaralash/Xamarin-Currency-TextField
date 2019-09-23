@@ -9,8 +9,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Plugin.TextField", "Plugin.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyTextField.Sample.iOS", "CurrencyTextField.Sample.iOS\CurrencyTextField.Sample.iOS.csproj", "{101E3060-8799-4119-8A7A-4F86A01C0C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.TextField.Android", "Plugin.TextField.Android\Plugin.TextField.Android.csproj", "{76A84D0E-9B1E-47D0-9677-F825441569ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyTextField.Sample.Android", "CurrencyTextField.Sample.Android\CurrencyTextField.Sample.Android.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Plugin.TextField\Plugin.TextField.projitems*{76a84d0e-9b1e-47d0-9677-f825441569ed}*SharedItemsImports = 4
 		Plugin.TextField\Plugin.TextField.projitems*{e71f3053-056c-4381-9638-048ed73bdff6}*SharedItemsImports = 4
 		Plugin.TextField\Plugin.TextField.projitems*{f3f0ef45-4cf3-45cf-a733-a69bb55aa320}*SharedItemsImports = 13
 	EndGlobalSection
@@ -45,6 +50,36 @@ Global
 		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhone.Build.0 = Release|iPhone
 		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|iPhone.Build.0 = Release|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{76A84D0E-9B1E-47D0-9677-F825441569ED}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhone.Build.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
