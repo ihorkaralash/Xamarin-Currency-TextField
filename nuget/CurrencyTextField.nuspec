@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CurrencyTextField</id>
-    <version>1.0.9</version>
+    <version>1.0.31</version>
     <title>Currency TextField for Xamarin.Android and Xamarin.iOS</title>
     <authors>Ihor Karalash</authors>
     <owners>Ihor Karalash</owners>
@@ -16,7 +16,7 @@
     <tags>xamarin, currency, textfield, uitextfield, plugin for xamarin, plugins, xamarin.android, xamarin.ios, android, ios</tags>
 	<dependencies>
 	     <group targetFramework="MonoAndroid10">
-			<dependency id="Xamarin.Android.Support.Compat" version="24.2.1" />
+			<dependency id="Xamarin.Android.Support.v7.AppCompat" version="27.0.2.1" />
          </group>
          <group targetFramework="Xamarin.iOS10">
          </group>

@@ -1,3 +1,6 @@
+### 1.0.31
+* Fixed null reference exception in ios text field
+
 ### 1.0.23
 * Added android implementation of a currency text field
 * Added format callback to have ability override the default formatting
