@@ -109,7 +109,7 @@ namespace Plugin.TextField.iOS
             var startPosition = BeginningOfDocument;
             var selectedTextRange = SelectedTextRange;
 
-            if (selectedTextRange != null)
+            if (startPosition != null && selectedTextRange != null)
             {
                 cursorOffset = (int) GetOffsetFromPosition(startPosition, selectedTextRange.Start);
             }
@@ -142,7 +142,7 @@ namespace Plugin.TextField.iOS
             var newLength = Text?.Length;
             var startPosition = BeginningOfDocument;
 
-            if (oldTextFieldLength.HasValue && newLength.HasValue && oldTextFieldLength > cursorOffset)
+            if (startPosition != null && oldTextFieldLength.HasValue && newLength.HasValue && oldTextFieldLength > cursorOffset)
             {
                 var newOffset = newLength - oldTextFieldLength + cursorOffset;
                 var newCursorPosition = GetPosition(startPosition, newOffset.Value);
