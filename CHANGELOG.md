@@ -1,8 +1,8 @@
-### 1.0.31
-* Fixed null reference exception in ios text field
-
 ### 1.0.33
 * Added ability to set a custom locale
+
+### 1.0.31
+* Fixed null reference exception in ios text field
 
 ### 1.0.23
 * Added android implementation of a currency text field
