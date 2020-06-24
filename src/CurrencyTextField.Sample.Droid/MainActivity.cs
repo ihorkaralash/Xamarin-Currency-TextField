@@ -3,6 +3,7 @@ using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using Java.Util;
 using Plugin.TextField.Droid;
 
 namespace CurrencyTextField.Sample.Droid
@@ -16,6 +17,7 @@ namespace CurrencyTextField.Sample.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            FindViewById<CurrencyEditText>(Resource.Id.valueEditText).Locale = Locale.Us;
             FindViewById<CurrencyEditText>(Resource.Id.valueEditText).Format = (string text, out string newText) =>
             {
                 newText = "";

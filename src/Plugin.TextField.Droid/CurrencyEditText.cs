@@ -6,6 +6,7 @@ using Android.Text;
 using Android.Util;
 using Java.Lang;
 using Java.Text;
+using Java.Util;
 
 namespace Plugin.TextField.Droid
 {
@@ -13,6 +14,8 @@ namespace Plugin.TextField.Droid
     public class CurrencyEditText : AppCompatEditText, ICurrencyTextField
     {
         private string _previousValue = "";
+
+        protected NumberFormat CurrencyFormatter => Locale != null ? NumberFormat.GetCurrencyInstance(Locale) : NumberFormat.CurrencyInstance;
 
         private int _maxLength;
         public int MaxLength
@@ -48,6 +51,8 @@ namespace Plugin.TextField.Droid
         public string GroupingSeparator { get; set; }
 
         public FormatDelegate Format { get; set; }
+
+        public Locale Locale { get; set; }
 
         protected CurrencyEditText(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
@@ -134,7 +139,7 @@ namespace Plugin.TextField.Droid
             }
             set
             {
-                var textFieldStringValue = Text = NumberFormat.CurrencyInstance.Format((value)).Replace(NumberFormat.CurrencyInstance.Currency.Symbol, CurrencySymbol);
+                var textFieldStringValue = Text = CurrencyFormatter.Format((value)).Replace(CurrencyFormatter.Currency.Symbol, CurrencySymbol);
                 if (!string.IsNullOrEmpty(textFieldStringValue))
                 {
                     _previousValue = textFieldStringValue;
