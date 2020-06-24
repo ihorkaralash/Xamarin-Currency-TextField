@@ -1,4 +1,5 @@
 ﻿using System;
+using Foundation;
 using UIKit;
 
 namespace CurrencyTextField.Sample.iOS
@@ -13,6 +14,7 @@ namespace CurrencyTextField.Sample.iOS
         {
             base.ViewDidLoad ();
 
+            TextField.Locale = NSLocale.FromLocaleIdentifier("en_US");
             TextField.MaxLength = 10;
             TextField.Format = (string text, out string newText) =>
             {
