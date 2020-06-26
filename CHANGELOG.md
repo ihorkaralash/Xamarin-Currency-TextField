@@ -1,4 +1,4 @@
-### 1.0.33
+### 1.0.33 - 1.0.36
 * Added ability to set a custom locale
 
 ### 1.0.31
