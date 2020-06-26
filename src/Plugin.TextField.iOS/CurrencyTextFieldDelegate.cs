@@ -26,17 +26,26 @@ namespace Plugin.TextField.iOS
 
         public string CurrencySymbol
         {
+            get => CurrencyFormatter.CurrencySymbol;
             set => CurrencyFormatter.CurrencySymbol = value;
         }
 
         public string DecimalSeparator
         {
+            get => CurrencyFormatter.CurrencyDecimalSeparator;
             set => CurrencyFormatter.CurrencyDecimalSeparator = value;
         }
 
         public string GroupingSeparator
         {
+            get => CurrencyFormatter.CurrencyGroupingSeparator;
             set => CurrencyFormatter.CurrencyGroupingSeparator = value;
+        }
+
+        public NSLocale Locale
+        {
+            get => CurrencyFormatter.Locale;
+            set => CurrencyFormatter.Locale = value;
         }
 
         public FormatDelegate Format { get; set; }
